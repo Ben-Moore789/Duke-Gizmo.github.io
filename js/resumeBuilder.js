@@ -5,30 +5,32 @@ names before I realized it and didn't have a recent copy backed up.  Oops.
 
 var bio = {
     name: "Ben Moore",
-    role: "Web Developer",
+    role: "",
     contacts: {
-        mobile: "205-712-0012",
-        email: "EverSeenaMooseFly@gmail.com",
+        mobile: "(205)712-0012",
+        email: "Ben.Moore789@gmail.com",
         github: "Duke-Gizmo",
         twitter: "@BenMoore789",
         location: "Atlanta, GA"
     },
-    welcomeMessage: "Welcome to my most Awesome resume!",
+    welcomeMessage: "Steadfast, confident professional with an infectious enthusiasm " +
+        "for technology, education and process improvement.",
     skills: {
-        programLanguages: [ "Python", "HTML", "CSS", "JavaScript", "VBA" ],
-        isntruction: [ "Aeronautics", "Aerobatics", "Tactical Operations", 
-            "Emergency Procedures", "Personnel Recovery Operations" ],
-        spokenLanguage: [ "Dari", "French", "Lithuanian" ]
+        isntruction: [ "Leadership", "Adult Education", "Personnel Management", "Communication", 
+            "Problem Solving", "Detail Oriented", "Budget Planning", "Resource Management", "CPR"],
+        programLanguages: [ "Python", "HTML", "CSS", "JavaScript", "Canvas", "VBA",
+                            "Windows and Office Proficient" ]
+        // "Aeronautics", "Aerobatics", "Tactical Operations", 
+            // "Emergency Procedures", "Personnel Recovery Operations" ],
     },
     bioPic: "images/me.jpg",
-    skillsets: [ "Familiar Programming Languages:", 
-        "Experienced Millitary Instructor Pilot:", "Basic Conversational Languages:" ]
+    skillsets: [ "", "Technical:"]
 };
 
 bio.display = function() {
     var a = HTMLheaderName.replace("%data%", bio.name);
     var b = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").prepend(a + b);
+    $("#header").prepend(a+b);
     var c = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var d = HTMLemail.replace("%data%", bio.contacts.email);
     var e = HTMLgithub.replace("%data%", bio.contacts.github);
@@ -110,15 +112,16 @@ education.display = function() {
         $(".education-entry:last").append(b + d + f);
         $(".education-entry:last").append(c + e);
     }
-    $(".education-entry:last").append(HTMLonlineClasses);
-    for (course in education.onlineCourses) {
-        var g = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-        var h = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-        var i = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-        var j = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-        $(".education-entry:last").append(g + h + i);
-        $(".education-entry:last").append(j);
-    }
+    // $(".education-entry:last").append(HTMLonlineClasses);
+    // for (course in education.onlineCourses) {
+    //     var g = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+    //     var k = g.replace("#", education.onlineCourses[course].url);
+    //     var h = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+    //     var i = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+    //     var j = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+    //     $(".education-entry:last").append(k + h + i);
+    //     $(".education-entry:last").append(j);
+    // }
 };
 
 education.display();
@@ -129,46 +132,69 @@ var work = {
         title: "Primary Pilot Training Instructor Pilot (T-6A)",
         location: "Columbus, MS",
         dates: "Aug 2011 - Jan 2015",
-        description: "Reviewed syllabus requirements, student progress " + 
-            "and weather information. Piloted aircraft and commanded crew. " + 
-            "Ensured optimum training opportunities and progress by conducting " + 
-            "and supervising student training."
+        description: ["•    Ensured optimum training opportunities and progress by conducting and "+
+            "supervising military flight and academic instruction in a dynamic, complex, high-density "+
+            "flying environment during 5 month course per student class.",
+            "•   Created electronic tools in Microsoft Excel/Visual Basic to plan for 150+ flights "+
+            "a day using only 35-45 jets with strict syllabus and complex aircrew limitations on "+
+            "students and instructors flying multiple times.  Exponential increases in efficiency.",
+            "•   Led team in management of student records of over 3,000 events earned highest rating "+
+            "of “Excellent” overall on internal inspection with 6 “Outstanding” sub-areas.",
+            "•   Strengthened ties with critical allied country as handpicked mentor to second-ever "+
+            "female Japanese exchange pilot student.   Student graduated with honors."]
     }, {
         employer: "USAF",
         title: "Afghan Air Advisor, Instructor Pilot and Chief of Education (C-208B)",
         location: "Kandahar, Afghanistan",
         dates: "Jan - Dec 2013",
-        description: "Advised Afghan Air Force leadership on managing English " + 
-            "language training program. Mentored and trained Afghan aircrew with " + 
-            "mission planning, air navigation and mobility oeprations."
+        description: ["•    Mentored, trained and assisted Afghan aircrew with mission planning, "+
+            "tactics, techniques and procedures (TTPs) for tactical airlift mobility operations,"+
+            " medical/ casualty evacuation and emergency procedures in high threat mountainous terrain.",
+            "•   Led mission planning system upgrade; standardized program across the force for 7.9K+ "+
+            "annual flights leading to safer mission execution. Zero Class A/B mishaps.",
+            "•   Led aircraft casualty evacuation configuration change, pushed data to other flying "+
+            "units; increased evacuation capabilities by 27%, up to 640+ patients annually.",
+            "•   Directed and advised Afghan Air Force leadership with managing English language "+
+            "training program supporting 960 personnel Air Wing.   Led overhaul with streamlined 12-week "+
+            "semesters, revised syllabi, and developed student record system; rapidly adopted/fielded by "+
+            "5 other Defense Language schools in country.",
+            "•   Authored 1st ever vocational aptitude battery tailored to foreign military with "+
+            "40% literacy rate.  Set entry requirements and allowed measured and efficient alignment "+
+            "of 4,000+ personnel into strength matched occupations and positions."]
     }, {
         employer: "USAF",
         title: "Combat Search and Rescue Instructor Pilot (HC-130P)",
         location: "Valdosta, GA",
         dates: "Jul 2008 - Jul 2011",
-        description: "Piloted special operations aircraft and commanded crews of " + 
-            "special operations forces for worldwide deployment and assignment to " + 
-            "regional unified commands to conduct unconventional warfare, direct action " + 
-            "and special reconnaissance. Managed personnel recovery and counter-terrorism " + 
-            "operations."
+        description: ["•    Commanded 10-member crew on $30M aircraft performing worldwide CSAR missions"+
+            " in support of contingency/maritime operations using night vision modified contour low-level "+
+            "ops, helicopter aerial refueling, personnel & equipment deployments, & infiltration/exfiltration "+
+            "trans-load operations.",
+            "•   Test pilot for 1st ever HC-130 aircraft simulator and first test platform in 14 years for "+
+            "pararescue operations test squadron researching new employment capabilities.",
+            "•   Expertly managed unit training program, implemented web-based task tracking system of 73k "+
+            "flying /48k ground training and special qualifications reducing non-mission ready crews by 50%.  "+
+            "Unit fully mission capable first time in 4 years. ",
+            "•   Implemented and tracked precision airdrop capability expansion providing Air Combat "+
+            "Command's 1st-ever, all weather rescue operations capability.",
+            "•   Crafted professional education program partnered with Georgia Tech; $35K program for "+
+            "six military-tech courses facilitating expert training for airmen."]
     }, {
         employer: "USAF",
         title: "Tactical Airlift Pilot (C-130E/H1)",
         location: "Fayetteville, NC",
         dates: "Jul 2005 - Sep 2008",
-        description: "Piloted aircraft and commanded crew to accomplish operational " + 
-            "and training in airlift and airdrop missions. Involved supervision and " + 
-            "planning of mission details and reviewing mission tasking, intelligence " + 
-            "and weather information. Ensured crew and aircraft were properly briefed, " + 
-            "pre-flighted, inspected, loaded, equipped and manned for flight."
+        description: ["• Reviewed mission tasking and intelligence information to plan, command and " +
+            "execute tactical airlift operations in austere locations with a crew of six.",
+            "• Created electronic mission planning tools to support deployed airlift crews in " +
+            "accomplishment of 2,000+ missions with unprecedented 97% success rate."]
     }, {
         employer: "USAF",
         title: "B-52H Maintenance Technician",
         location: "Shreveport, LA",
         dates: "Sept 1999 - Nov 2002",
-        description: "Troubleshot and maintained aircraft structures, systems, components " + 
-            "and support equipment. Tested repaired components using mockups and test equipment. " + 
-            "Adjusted, aligned, rigged and calibrated aircraft systems. "
+        description: ["• Troubleshot and maintained aircraft structures, systems, and components.",
+            "• Tested and repaired components using mockups and test equipment."]
     } ]
 };
 
@@ -179,9 +205,15 @@ work.display = function() {
         var b = HTMLworkTitle.replace("%data%", work.jobs[job].title);
         var c = HTMLworkLocation.replace("%data%", work.jobs[job].location);
         var d = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-        var e = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(a + b);
-        $(".work-entry:last").append(c + d + e);
+        $(".work-entry:last").append(c + d);
+        var j = 0;
+        for (bullet in work.jobs[job].description) {
+            var k = 0;
+            var l = HTMLworkDescription.replace("%data%", work.jobs[job].description[bullet]);
+            $(".work-entry:last").append(l);
+            j += 1;
+        }
     }
 };
 
@@ -190,16 +222,19 @@ work.display();
 work.deployments = [ "Diego Garcia", "Ali Al Salem Air Base, Kuwait", "Camp Lemonnier, Djibouti" ];
 
 var projects = {
-    projects: [ {
-        title: "Web Crawler",
-        dates: "Dec 2014",
-        description: "Web Crawler",
-        images: [ "http://lorempixel.com/400/200/technics", "http://lorempixel.com/400/200/business" ]
-    }, {
-        title: "Web Resume",
-        dates: "Jan 2015",
-        description: "Resume",
-        images: [ "http://lorempixel.com/400/200/transport", "http://lorempixel.com/400/200/abstract" ]
+    projects: [ //{
+    //     title: "Web Crawler",
+    //     dates: "Dec 2014",
+    //     description: "Web Crawler",
+    //     images: [ "http://lorempixel.com/400/200/technics", "http://lorempixel.com/400/200/business" ]
+    // },
+    {
+        title: "Afghan Military Vocational Aptitude Test",
+        dates: "December 2013",
+        description: "• Authored 1st ever vocational aptitude battery tailored to foreign military with 40% " +
+            "literacy rate.  Set entry requirements and allowed measured and efficient alignment of " +
+            "4,000+ personnel into strength matched occupations and positions.",
+        images: [ "images/test.jpg", "images/one.jpg", "images/two.jpg" ]
     } ]
 };
 
