@@ -27,7 +27,10 @@ var Engine = (function(global) {
         lastTime;
 
     canvas.width = 606;
-    canvas.height = 606;
+    canvas.height = 600;
+    ctx.fillStyle = "#00FF00";
+    ctx.font="10px Orbitron";    
+
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -84,6 +87,7 @@ var Engine = (function(global) {
     function update(dt,calls) {
         updateEntities(dt,calls);
         checkCollisions();
+        levelUp();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -110,7 +114,17 @@ var Engine = (function(global) {
      * they are just drawing the entire screen over and over.
      */
     function render() {
-        ctx.drawImage(Resources.get('images/spaceBackground3.png'),0,0);
+        ctx.drawImage(Resources.get('images/spaceBackground4.png'),0,0);
+        ctx.font="10px Orbitron";    
+        ctx.fillText("level",272,565);
+        ctx.fillText("lives",328,565);
+        ctx.fillText("shields",378,565);
+        ctx.fillText("kills",442,565);
+        ctx.font="20px Orbitron";    
+        ctx.fillText(returns,272,585);
+        ctx.fillText(lives,332,585);
+        ctx.fillText(shields,388,585);
+        ctx.fillText(kills,442,585);
         renderEntities();
     }
 
@@ -144,10 +158,10 @@ var Engine = (function(global) {
      * all of these images are properly loaded our game will start.
      */
     Resources.load([
-        'images/smurfShip.png',
+        'images/smurfShip.png', 'images/gameOver.png',
         'images/frogShipUp.png', 'images/frogShipDn.png',
         'images/ShipShieldLt.png',
-        'images/spaceBackground3.png',
+        'images/spaceBackground4.png',
         'images/shield-0.png', 'images/shield-1.png', //by Niantic Labs. Copyright 2015
         'images/shield-2.png', 'images/shield-3.png', 
         'images/strike-1.png', 'images/strike-2.png', //by Niantic Labs. Copyright 2015
